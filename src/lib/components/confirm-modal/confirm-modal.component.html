@@ -1,0 +1,17 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">{{model.title}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="cancel()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>{{model.message}}</p>
+    </div>
+    <div class="modal-footer justify-content-end">
+        <button type="button" [ngClass]="model.cancelButton.class"
+            (click)="cancel()">{{model.cancelButton.label}}</button>
+        <button type="button" [ngClass]="model.noButton.class" (click)="no()">{{model.noButton.label}}</button>
+        <button type="button" [ngClass]="model.okButton.class" (click)="ok()">{{model.okButton.label}}</button>
+    </div>
+</div>

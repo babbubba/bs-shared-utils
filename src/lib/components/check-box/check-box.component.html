@@ -1,0 +1,11 @@
+<div [ngClass]="wrap ? 'form-group' : 'check-box-wrapper'">
+    <label *ngIf="label">{{label}}</label>
+    <div class="bootstrap-switch bootstrap-switch-wrapper custom-checkbox" (click)="change()">
+        <div class="bootstrap-switch-container custom-checkbox-container">
+            <span *ngIf="!value" class="bootstrap-switch-handle-off bootstrap-switch-danger custom-checkbox-switch">No</span>
+            <span *ngIf="value" class="bootstrap-switch-label custom-checkbox-switch">&nbsp;</span>
+            <span *ngIf="value" class="bootstrap-switch-handle-on bootstrap-switch-success custom-checkbox-switch">Si</span>
+        </div>
+    </div>
+    <small *ngIf="description" class="form-text text-muted">{{description}}</small>
+</div>

@@ -1,0 +1,30 @@
+{
+  "name": "@babbubba/bs-shared-utils",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/forms": "^14.2.0",
+    "@angular/animations": "^14.2.0",
+    "@angular/platform-browser": "^14.2.0",
+    "@angular/platform-browser-dynamic": "^14.2.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "ngx-bootstrap": "^9.0.0",
+    "rxjs": "~7.5.0",
+    "@types/datatables.net": "^1.10.24",
+    "@types/jquery": "^3.5.16",
+    "angular-datatables": "^14.0.2",
+    "datatables.net": "^1.13.4",
+    "datatables.net-dt": "^1.13.4",
+    "jquery": "^3.7.0",
+    "bootstrap": "^4.6.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babbubba/bs-shared-utils.git"
+  }
+}
