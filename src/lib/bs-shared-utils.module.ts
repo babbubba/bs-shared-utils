@@ -7,7 +7,7 @@ import { CheckBoxComponent } from './components/check-box/check-box.component';
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 import { BrokenPageComponent } from './components/broken-page/broken-page.component';
 import { RouterModule } from '@angular/router';
 import { BytesPipe } from './pipes/bytes.pipe';
@@ -23,7 +23,7 @@ import { BytesPipe } from './pipes/bytes.pipe';
   ],
   imports: [
     CommonModule,
-    BrowserModule,
+    // BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     ModalModule.forChild(),

@@ -1,6 +1,6 @@
 {
   "name": "@babbubba/bs-shared-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0",
@@ -18,7 +18,8 @@
     "datatables.net": "^1.13.4",
     "datatables.net-dt": "^1.13.4",
     "jquery": "^3.7.0",
-    "bootstrap": "^4.6.2"
+    "bootstrap": "^4.6.2",
+    "jwt-decode": "^3.1.2"
   },
   "dependencies": {
     "tslib": "^2.3.0"
