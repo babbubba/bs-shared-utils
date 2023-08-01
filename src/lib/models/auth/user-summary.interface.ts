@@ -6,7 +6,7 @@ export interface IUserSummary {
   id: string;
   username: string;
   displayName: string;
-  token?: string;
+  accessToken?: string;
   roles: IRole[];
   email: string;
   isEnabled: string;

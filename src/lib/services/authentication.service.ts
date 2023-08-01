@@ -31,11 +31,11 @@ export class AuthenticationService extends ServiceBase {
         const authenticateResponse = await lastValueFrom(this.httpWithoutInterceptor.post<ApiResponseValue<IUserSummary>>(`${this.apiUrl}api/Authentication/authenticate`, loginDto));
         if (authenticateResponse.success) {
           this.applicationService.PersistTokens({
-            accessToken: authenticateResponse.value.token ?? '',
+            accessToken: authenticateResponse.value.accessToken ?? '',
             refreshToken: authenticateResponse.value.refreshToken ?? '',
             refreshTokenExpire: authenticateResponse.value.refreshTokenExpire ?? new Date
           });
-          delete authenticateResponse.value.token;
+          delete authenticateResponse.value.accessToken;
           delete authenticateResponse.value.refreshToken;
           delete authenticateResponse.value.refreshTokenExpire;
 
