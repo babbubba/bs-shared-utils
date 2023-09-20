@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import jwt_decode from 'jwt-decode';
 import { AppConfig, Globals, IRefreshToken, IUserSummary } from '../models';
-import { GetJWTAccessToken, GetJWTRefreshToken, SetJWTAccessToken, SetJWTRefreshToken, SetJWTRefreshTokenExpireDate } from './jwt.function';
+import { GetJWTAccessToken, GetJWTRefreshToken, GetUserCookie, SetJWTAccessToken, SetJWTRefreshToken, SetJWTRefreshTokenExpireDate } from './jwt.function';
 import { ApiResponseValue } from '../models/api/api-response-value.interface';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class ApplicationService {
   private httpBackendClient: HttpClient;
   appConfig$: BehaviorSubject<AppConfig | undefined> = new BehaviorSubject<AppConfig | undefined>(undefined);
   dtConfig$: BehaviorSubject<DataTables.Settings | undefined> = new BehaviorSubject<DataTables.Settings | undefined>(undefined);
-  currentUser$: BehaviorSubject<IUserSummary | undefined> = new BehaviorSubject<IUserSummary| undefined>(undefined);
+  currentUser$: BehaviorSubject<IUserSummary | undefined>;// = new BehaviorSubject<IUserSummary| undefined>(undefined);
   tokenRefreshed$: BehaviorSubject<string| undefined> = new BehaviorSubject<string|undefined>(undefined);
   IsRefreshing: boolean = false;
   appConfig?: AppConfig;
@@ -23,6 +23,7 @@ export class ApplicationService {
     private handler: HttpBackend) {
     this.httpBackendClient = new HttpClient(this.handler);
     this.appConfig$.subscribe(res=> this.appConfig = res);
+    this.currentUser$ = new BehaviorSubject<IUserSummary| undefined>(GetUserCookie());
   }
 
   getConfigFile() {

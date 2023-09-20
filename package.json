@@ -1,6 +1,13 @@
 {
   "name": "@babbubba/bs-shared-utils",
-  "version": "0.0.4",
+  "version": "1.0.2",
+  "description": "Common components, pipes, and configuration service pattern for new Angular 14 applications.",
+  "author": "Fabio Cavallari",
+  "bugs": {
+    "url": "https://github.com/babbubba/bs-shared-utils/issues"
+  },
+  "homepage": "https://github.com/babbubba/bs-shared-utils",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0",

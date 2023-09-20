@@ -51,7 +51,7 @@ export class AuthenticationService extends ServiceBase {
         }
       } catch (err: any) {
         this.applicationService.currentUser$.next(undefined);
-        reject(err.error.error || err.message)
+        reject(err?.error?.error || err?.message || 'Generic error')
       }
     });
   }

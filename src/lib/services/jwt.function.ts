@@ -1,4 +1,4 @@
-import { Globals } from "../models";
+import { Globals, IUserSummary } from "../models";
 
 export function GetJWTAccessToken():string | undefined {
   return localStorage.getItem(Globals.JWT_ACCESS_TOKEN) ?? undefined;
@@ -12,6 +12,12 @@ export function GetJWTRefreshTokenExpireDate():Date | undefined {
   let expireDate = localStorage.getItem(Globals.JWT_REFRESH_TOKEN_EXPIRE_DATE);
   if(!expireDate) return undefined;
   return new Date(JSON.parse(expireDate));
+}
+
+export function GetUserCookie():IUserSummary| undefined {
+  let currentUserFromCookie = localStorage.getItem(Globals.CURRENT_USER_COOKIE);
+  if(!currentUserFromCookie) return undefined;
+  return JSON.parse(currentUserFromCookie);
 }
 
 export function SetJWTAccessToken(accessToken:string):void {
