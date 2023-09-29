@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrokenPageComponent } from './components/broken-page/broken-page.component';
 import { RouterModule } from '@angular/router';
 import { BytesPipe } from './pipes/bytes.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { BytesPipe } from './pipes/bytes.pipe';
     ModalModule.forChild(),
     DataTablesModule,
     HttpClientModule,
-    RouterModule.forChild([{path: 'shared/broken', component: BrokenPageComponent}])
+    ToastrModule.forRoot(),
+    RouterModule.forChild([{path: 'shared/broken', component: BrokenPageComponent}]),
+    NgxSpinnerModule
   ],
   exports: [
     CheckBoxComponent,

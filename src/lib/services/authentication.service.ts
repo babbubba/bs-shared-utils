@@ -20,9 +20,16 @@ export class AuthenticationService extends ServiceBase {
     this.httpWithoutInterceptor = new HttpClient(this.httpBackend);
   }
 
-  goToLogin() {
-    this.router.navigate(['/login']);
+  goToLogin(requestedUrl: string | null = null) {
+    this.router.navigate(
+      ['/login'],
+      {
+        queryParams: { requrl: requestedUrl }
+      }
+    );
   }
+
+
 
 
   login(loginDto: ILoginDto): Promise<void> {

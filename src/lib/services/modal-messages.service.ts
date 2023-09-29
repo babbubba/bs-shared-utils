@@ -61,19 +61,19 @@ export class ModalMessagesService {
 
 
   infoMessage(message: string): Observable<void> | undefined {
-    var input: ModalMessage = new ModalMessage(message, 'Info', undefined, undefined, 'bg-info');
+    var input: ModalMessage = new ModalMessage(message, this.translate.instant('commons.titles.info'), undefined, undefined, 'bg-info');
 
     return this.showMessage(input);
   }
 
   warningMessage(message: string, useHtml: boolean = false) {
-    var input: ModalMessage = new ModalMessage(message, 'Avviso', undefined, undefined, 'bg-warning');
+    var input: ModalMessage = new ModalMessage(message, this.translate.instant('commons.titles.warning'), undefined, undefined, 'bg-warning');
     input.useHtml = useHtml;
     return this.showMessage(input);
   }
 
   errorMessage(message: string) {
-    var input: ModalMessage = new ModalMessage(message, 'Errore', undefined, undefined, 'bg-danger');
+    var input: ModalMessage = new ModalMessage(message, this.translate.instant('commons.titles.error'), undefined, undefined, 'bg-danger');
     return this.showMessage(input);
   }
 
