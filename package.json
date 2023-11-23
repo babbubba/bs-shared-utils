@@ -1,6 +1,6 @@
 {
   "name": "@babbubba/bs-shared-utils",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Common components, pipes, and configuration service pattern for new Angular 14 applications.",
   "author": "Fabio Cavallari",
   "bugs": {
