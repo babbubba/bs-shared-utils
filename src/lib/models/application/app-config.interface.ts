@@ -4,4 +4,5 @@ export interface AppConfig {
   logoUrl: string;
   appTitle: string;
   dataTableLanguageUrl: string;
+  recaptchaSiteKey: string;
 }

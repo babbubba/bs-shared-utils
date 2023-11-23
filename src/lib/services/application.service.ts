@@ -26,25 +26,42 @@ export class ApplicationService {
     this.currentUser$ = new BehaviorSubject<IUserSummary| undefined>(GetUserCookie());
   }
 
+  /**
+   * Read the application settings from configuration file (defined in Globals.CONFIG_PATH)
+   * @returns the instance of 'AppConfig' defined in application config file
+   */
   getConfigFile() {
     return this.httpBackendClient.get<AppConfig>(Globals.CONFIG_PATH);
   }
 
+  /**
+   * Read the datatable.net settings from configuration file (defined in Globals.DATATABLES_CONFIG_PATH constant)
+   * @returns the instance of 'DataTables.Settings' defined in datatable config file
+   */
   getDataTablesConfigFile() {
     return this.httpBackendClient.get<DataTables.Settings>(Globals.DATATABLES_CONFIG_PATH);
   }
 
+  /**
+   * Call the backend and return the current assembly version
+   * @returns The backend API's assembly version (string)
+   */
+  getBackendVersion() {
+    return this.httpBackendClient.get<string>(`${this.appConfig?.apiEndpointUrl}/api/Application/version`);
+  }
 
+  /**
+   * Checks if the access token is presents in the current local storage cookie
+   * @returns true if the access token exists otherwise false
+   */
   public TokenExists(): boolean {
     return GetJWTAccessToken() !== undefined;
   }
 
-    /**
-   * Return true if token expired or not exists
-   *
-   * @return {*}  {boolean}
-   * @memberof JwtTokenService
-   */
+/**
+ * Checks if the access token stored in current local storahe cookie is expired
+ * @returns true if the acess token expired otherwise false
+ */
     public TokenExpired(): boolean {
       const token = GetJWTAccessToken();
       if(!token) return true;

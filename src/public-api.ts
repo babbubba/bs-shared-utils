@@ -17,6 +17,7 @@ export * from './lib/models/api/api-response.interface';
 export * from './lib/models/lists/list-item.interface';
 export * from './lib/models/application/app-config.interface';
 export * from './lib/models/auth/refresh-token.interface';
+export * from './lib/models/auth/auth-register-dto.interface';
 export * from './lib/models/auth/role.interface';
 export * from './lib/models/auth/user-summary.interface';
 export * from './lib/models/auth/login-dto.interface';
@@ -32,6 +33,7 @@ export * from './lib/services/jwt-token.service';
 export * from './lib/services/errors-interceptor.service';
 export * from './lib/services/istant-notify.service';
 export * from './lib/services/loader-interceptor.service';
+export * from './lib/services/date-interceptor.service';
 
 export * from './lib/services/factory.function';
 export * from './lib/services/datetime.function';

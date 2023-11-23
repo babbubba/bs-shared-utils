@@ -23,13 +23,12 @@ export class ErrorsInterceptor implements HttpInterceptor {
 
           this.authService.logout();
           let url = this.router.routerState.snapshot.url;
-          this.authService.goToLogin(url);
-          // this.router.events.subscribe((event) => {
-          //   if (event) {
-          //     url = event instanceof NavigationEnd ? event.url : null;
-          //   }
-          //   this.authService.goToLogin(url);
-          // })
+          if(url.indexOf('requrl')>=0 ){
+            this.authService.goToLogin(null);
+          }
+          else {
+            this.authService.goToLogin(url);
+          }
           return of(err.message);
         }
       case 403:

@@ -1,5 +1,5 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { DataTablesModule } from 'angular-datatables';
@@ -12,7 +12,8 @@ import { RouterModule } from '@angular/router';
 import { BytesPipe } from './pipes/bytes.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import { ApplicationService } from './services/application.service';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     DataTablesModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    RouterModule.forChild([{path: 'shared/broken', component: BrokenPageComponent}]),
-    NgxSpinnerModule
+    RouterModule.forChild([{ path: 'shared/broken', component: BrokenPageComponent }]),
+    NgxSpinnerModule,
+    RecaptchaV3Module
   ],
   exports: [
     CheckBoxComponent,
@@ -39,6 +41,11 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ConfirmModalComponent,
     BrokenPageComponent,
     BytesPipe,
+  ],
+  providers: [
+
   ]
 })
 export class BsSharedUtilsModule { }
+
+
